@@ -35,8 +35,8 @@ def program():
 def create_key(request:KeyBase):
     try:
         # Initialize the TableServiceClient
-        service_client = TableServiceClient.from_connection_string(conn_str="DefaultEndpointsProtocol=https;AccountName=keystrokelogging;AccountKey=6y1TvDcNzZRpByVGdJKbCzkLTZb+6mP4WMAWEyBtehCoQW4KaIQy2EmeH2gjCVSXs9JuypEYFou5+AStPukBQw==;EndpointSuffix=core.windows.net")
-        table_name = "keys13"
+        service_client = TableServiceClient.from_connection_string(conn_str)
+        table_name = table_name
         table_client = service_client.get_table_client(table_name)
         # a for loop to insert data entity by entity
         for i in range(len(request.EventID.split(","))):
